@@ -102,7 +102,9 @@ set(_eu_build_byproducts "${_eu_root}/lib/libdw${CMAKE_STATIC_LIBRARY_SUFFIX}"
 externalproject_add(
     omnitrace-elfutils-build
     PREFIX ${PROJECT_BINARY_DIR}/external/elfutils
-    URL https://sourceware.org/elfutils/ftp/${ElfUtils_DOWNLOAD_VERSION}/elfutils-${ElfUtils_DOWNLOAD_VERSION}.tar.bz2
+    URL ${ElfUtils_DOWNLOAD_URL}
+        "https://sourceware.org/elfutils/ftp/${ElfUtils_DOWNLOAD_VERSION}/elfutils-${ElfUtils_DOWNLOAD_VERSION}.tar.bz2"
+        "https://mirrors.kernel.org/sourceware/elfutils/${ElfUtils_DOWNLOAD_VERSION}/elfutils-${ElfUtils_DOWNLOAD_VERSION}.tar.bz2"
     BUILD_IN_SOURCE 1
     CONFIGURE_COMMAND
         ${CMAKE_COMMAND} -E env CC=${ElfUtils_C_COMPILER}
