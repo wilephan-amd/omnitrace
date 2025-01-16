@@ -568,7 +568,7 @@ module_function::is_routine_constrained() const
     }
 
     static std::regex exclude(
-        "(omnitrace|tim::|MPI_Init|MPI_Finalize|dyninst|DYNINST|tm_clones)", regex_opts);
+        "(omnitrace|tim::|MPI_Init|mpi_init_|MPI_Finalize|mpi_finalize_|dyninst|DYNINST|tm_clones)", regex_opts);
     // static std::regex exclude_printf("(|v|f)printf$", regex_opts);
     static std::regex exclude_cxx(
         "(std::_Sp_counted_base|std::(use|has)_facet|std::locale|::sentry|^std::_|::_(M|"
